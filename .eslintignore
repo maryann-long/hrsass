@@ -2,3 +2,44 @@ build/*.js
 src/assets
 public
 dist
+{
+    "explorer.confirmDelete": false,
+    "emmet.excludeLanguages": [
+        "markdown"
+    ],
+    "editor.formatOnType": true,
+    "editor.formatOnSave": true,
+    "workbench.colorTheme": "Monokai",
+    "files.autoSave": "afterDelay",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    // "editor.fontLigatures": null,
+    "launch": {
+
+        "configurations": [],
+        "compounds": []
+    },
+    "cssrem.rootFontSize": 37.5,
+    "[javascript]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    // "eslint.enable": true,
+    "eslint.run": "onType",
+    "eslint.options": {
+        "extensions": [
+            ".js",
+            ".vue",
+            ".jsx",
+            ".tsx"
+        ]
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.fontLigatures": null
+}
