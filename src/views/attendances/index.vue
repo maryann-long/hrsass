@@ -1,5 +1,6 @@
 <template>
-  <div class="" />
+  <div class="">考勤</div>
+
 </template>
 <script>
 export default {
