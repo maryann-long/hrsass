@@ -8,6 +8,7 @@ export default {
     {
       // 二级路由
       path: '',
+      name: 'departments',
       component: () => import('@/views/departments'),
       meta: {
         title: '组织架构',

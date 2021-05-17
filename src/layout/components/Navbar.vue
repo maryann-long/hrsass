@@ -1,38 +1,53 @@
 <template>
   <div class="navbar">
-    <hamburger :is-active="sidebar.opened"
-               class="hamburger-container"
-               @toggleClick="toggleSideBar" />
+    <hamburger
+      :is-active="sidebar.opened"
+      class="hamburger-container"
+      @toggleClick="toggleSideBar"
+    />
     <div class="app-breadcrumb">
       江苏传智播客教育科技股份有限公司
       <span class="breadBtn">体验版</span>
     </div>
-    <!-- <breadcrumb class="breadcrumb-container" /> -->
-
+    <breadcrumb class="breadcrumb-container" />
     <div class="right-menu">
-      <el-dropdown class="avatar-container"
-                   trigger="click">
+      <lang class="right-menu-item" />
+      <screen-full class="right-menu-item" />
+      <theme-picker class="right-menu-item" />
+      <el-dropdown
+        class="avatar-container"
+        trigger="click"
+      >
         <div class="avatar-wrapper">
-          <img :src="staffPhoto"
-          v-imageerror='defaultImg'
-               class="user-avatar">
-          <span class="name">{{name}}</span>
+
+          <img
+            v-imageerror="defaultImg"
+            :src="staffPhoto"
+            class="user-avatar"
+          >
+          <span class="name">{{ name }}</span>
           <i class="el-icon-caret-bottom" />
         </div>
-        <el-dropdown-menu slot="dropdown"
-                          class="user-dropdown">
+        <el-dropdown-menu
+          slot="dropdown"
+          class="user-dropdown"
+        >
           <router-link to="/">
             <el-dropdown-item>
               首页
             </el-dropdown-item>
           </router-link>
-          <a target="_blank"
-             href="https://github.com/maryann-long/hrsass">
+          <a
+            target="_blank"
+            href="https://github.com/maryann-long/hrsass"
+          >
             <el-dropdown-item>项目地址</el-dropdown-item>
           </a>
 
-          <el-dropdown-item divided
-                            @click.native="logout">
+          <el-dropdown-item
+            divided
+            @click.native="logout"
+          >
             <span style="display:block;">退出登录</span>
           </el-dropdown-item>
         </el-dropdown-menu>
@@ -45,16 +60,17 @@
 import { mapGetters } from 'vuex'
 import Breadcrumb from '@/components/Breadcrumb'
 import Hamburger from '@/components/Hamburger'
-
+import Lang from '@/components/Lang'
 export default {
-  data () {
+  components: {
+    Breadcrumb,
+    Hamburger,
+    Lang
+  },
+  data() {
     return {
       defaultImg: require('@/assets/common/head.jpg')
     }
-  },
-  components: {
-    Breadcrumb,
-    Hamburger
   },
   computed: {
     ...mapGetters([
@@ -65,10 +81,10 @@ export default {
     ])
   },
   methods: {
-    toggleSideBar () {
+    toggleSideBar() {
       this.$store.dispatch('app/toggleSideBar')
     },
-    async logout () {
+    async logout() {
       await this.$store.dispatch('user/logout')
       this.$router.push(`/login?redirect=${this.$route.fullPath}`)
     }
@@ -126,14 +142,16 @@ export default {
     &:focus {
       outline: none;
     }
-
+     .theme-picker {
+     padding-top:10px!important;
+    }
     .right-menu-item {
       display: inline-block;
       padding: 0 8px;
       height: 100%;
       font-size: 18px;
       color: #5a5e66;
-      vertical-align: text-bottom;
+      vertical-align: middle;
 
       &.hover-effect {
         cursor: pointer;
@@ -151,6 +169,7 @@ export default {
       .avatar-wrapper {
         margin-top: 5px;
         position: relative;
+        vertical-align: middle;
 
         .user-avatar {
           cursor: pointer;

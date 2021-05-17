@@ -13,7 +13,7 @@
           default-expand-all
         >
           <tree-tools
-            slot-scope="{ data }"
+            slot-scope="{data}"
             :tree-node="data"
             @del-depts="getDepartments"
             @add-depts="addDept"
@@ -62,7 +62,7 @@ export default {
   mounted() { },
   methods: {
     async getDepartments() {
-      console.log(444)
+      // console.log(444)
       this.loading = true
       const result = await getDepartments()
       // console.log(result)

@@ -35,17 +35,18 @@ export function updateRole(data) {
   })
 }
 // 添加角色
-// export function addRole(data) {
-//   return request({
-//     url: '/sys/role',
-//     method: 'POST',
-//     data
-//   })
-// }
 export function addRole(data) {
   return request({
     url: '/sys/role',
     method: 'post',
+    data
+  })
+}
+// 给角色分配权限
+export function assignPerm(data) {
+  return request({
+    url: '/sys/role/assignPrem',
+    method: 'put',
     data
   })
 }

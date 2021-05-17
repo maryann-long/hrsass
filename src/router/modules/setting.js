@@ -2,14 +2,14 @@
 import Layout from '@/layout'
 export default {
   path: '/setting',
-  name: 'setting',
+  name: 'settings',
   component: Layout,
   children: [
     {
       // 二级路由
       path: '',
       component: () => import('@/views/setting'),
-      name: 'setting',
+      name: 'settings',
       meta: {
         title: '公司设置',
         icon: 'setting'

@@ -58,7 +58,9 @@ export default {
   },
   computed: {},
   watch: {},
-  created() { },
+  created() {
+    // console.log(this.treeNode)
+  },
   mounted() { },
   methods: {
     operateDepts(type) {
